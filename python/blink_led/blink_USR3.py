@@ -33,78 +33,37 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------
 
-Code for the USR3 LED that will 
-  - 
-
-
+Code for the USR3 LED that will make the PocketBeagle USR3 led blink at 
+a frequency of 5 HZ. 
+Steps:
+  - Make the USR3 led turn on
+  - Wait 0.2 seconds
+  - Make the USR3 led turn off
+  - Wait 0.2 seconds
 
 --------------------------------------------------------------------------
 """
+import time
 
-# ------------------------------------------------------------------------
-# Constants
-# ------------------------------------------------------------------------
-
-# Frequency of 5 Hz
-rate = 5
-
-# ------------------------------------------------------------------------
-# Global variables
-# ------------------------------------------------------------------------
+import Adafruit_BBIO.GPIO as GPIO
 
 # ------------------------------------------------------------------------
 # Functions
 # ------------------------------------------------------------------------
 
-self.pin = pin
-
-# Set up pins as inputs or outputs
-GPIO.setup(pin, GPIO.IN)
-GPIO.setup(pin, GPIO.OUT)
-GPIO.setup(pin, GPIO.OUT)  
-
-# used the Adafruit code but now sure about everything (eg. don't know what range is)
-for i in range(4):
-    GPIO.setup("USR3" % i, GPIO.OUT)
-
-while True:
-    for i in range(4):
-        GPIO.output("USR3" % i, 1)
-        time.sleep(0.2)
-    for i in range(4):
-        GPIO.output("USR3" % i, 0)
-        time.sleep(0.2)
-
-
-
+GPIO.setup("USR3", GPIO.OUT)
 
 # ------------------------------------------------------------------------
 # Main script
 # ------------------------------------------------------------------------
 
-import sysfs
-
-import time
-
-import Adafruit_BBIO.GPIO as GPIO
-
-
 if __name__ == '__main__':
   
+    while True:
+        GPIO.output("USR3", 1)
+        time.sleep(0.2)
+        GPIO.output("USR3", 0)
+        time.sleep(0.2)
   
-  # make it go to cd   /sys/class/leds/beaglebone:green:usr3
-  # some way to blink back and forth 
-    # echo "1" > brightness
-    # wait 0.2 s (1/frequency = 1/5Hz = 0.2s)
-    # echo "0" > brightness
-    # repeat"
-
-
-
-
-
-
-
-
 
 
