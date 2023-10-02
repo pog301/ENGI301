@@ -60,7 +60,12 @@ Error conditions:
 # ------------------------------------------------------------------------
 
 # NOTE - No constants are needed for this example 
+import sys
 import operator
+
+if sys.version[0] == "2":
+    input = raw_input
+
 # ------------------------------------------------------------------------
 # Global variables
 # ------------------------------------------------------------------------
@@ -100,6 +105,10 @@ def get_user_input():
         op      = input("Enter function (valid values are +, -, *, /, >>, <<, %, **): ")
         
         func    = operators.get(op)
+        
+        if ((op == ">>") or (op == "<<")):
+            number1 = int(number1)
+            number2 = int(number2)
         
         # NOTE - User input is generally returned as a string and must be translated.
     except:
