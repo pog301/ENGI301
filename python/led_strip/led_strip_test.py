@@ -66,7 +66,8 @@ else:
     print ('WARNING: could not connect to %s' % ADDRESS)
     
 # Define Pixel String
-STR_LEN=16
+STR_LEN=64
+
 for i in range(STR_LEN):
     leds = [(255, 255, 255)] * STR_LEN
 
@@ -81,7 +82,7 @@ def task():
         print("loop")
         for i in range (0, 255):
             for j in range(STR_LEN):
-                leds[j] = (i, i, i)
+                leds[j] = (i, 0, 0)
     
             if not client.put_pixels(leds, channel=0):
                 print ('not connected')
