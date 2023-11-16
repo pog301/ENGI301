@@ -53,36 +53,36 @@ Background Information:
         USED Combolock as reference for debugging and added a couple of comments eg (commented main code) from there too 
         (perhaps not specifically or first time it appeard)
 
+Went over Connect 4 code and it helped me understand; applied the old and new positions and reinforced idea of diving by
+sections (if <x etc.) https://github.com/craannj/ECE434-connect4/blob/master/connect4final.py
+Used combolock code for making 
+
 """
 
 import time
 import opc
-#import joystick
+import joystick as JOYSTICK
 
 ADDRESS = 'localhost:7890'
 
 # Create a client object
 client = opc.Client(ADDRESS)
  
- 
 # ------------------------------------------------------------------------
 # Constants
 # ------------------------------------------------------------------------
 
 # Define Pixel String
-STR_LEN = 10
+STR_LEN = 256
 leds    = [(255, 255, 255)] * STR_LEN
 
-if not client.put_pixels(leds, channel=0):
-    print ('not connected')
+#if not client.put_pixels(leds, channel=0):
+    #print ('not connected')
 
 time.sleep(1)
 
-#snake_size          = 2
-#initial_pixels      = [(0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (255, 255, 255)]
 #initial_channel_a   = 4
 #initial_channel_b   = 5
-#food_position       = random 
 #chnl_a              = initial_channel_a
 #chnl_b              = initial_channel_b 
 
@@ -92,8 +92,30 @@ time.sleep(1)
 # ------------------------------------------------------------------------
 
 class LedDisplay():
+    """Class for the LED Display"""
+    joystick         = None
+    
+    def __init__(self, j_horizontal="P1_21", j_vertical="P1_23", j_switch="P1_20"):
+        """ Initialize variables"""
 
-   def game():
+        self.joystick     = JOYSTICK.Joystick(j_horizontal, j_vertical, j_switch)
+    
+    # End def
+    
+    #xpos = 0  
+    #ypos = 0    
+    #xpos_old = 0
+    #ypos_old = 0
+    
+    
+    #def movePiece(leds, xpos, xpos_old, ypos, ypos_old):
+    
+    #def moveDot():
+        
+    #End def
+    
+    
+    def game(self):
         """Runs the LED matrix ____ game."""
         
         #self.client.put_pixels(self, initial_pixels, channel=initial_channel_a)   
@@ -102,42 +124,215 @@ class LedDisplay():
         
         while True:
         #Defining path of leds
-            leds[6-15] = (100, 0, 0)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-        #leds[] = (100, 100, 100)
-         
-        
-        #while True:
-            ##Uses each light's address to set display to set a color
-            #def task():
-            #while True:
-                #print("loop")
-                #for i in range (0, 255):
-                #    for j in range(STR_LEN):
-                #        leds[j] = (i, i, i)
+            for j in range(STR_LEN):
+                leds[j] = (0, 0, 0)
+                
+            initial_position = 29
+            end_game = 0
+            final_led = 223
+            location = initial_position
+            old_location = initial_position
             
-                #    if not client.put_pixels(leds, channel=0):
-                #        print ('not connected')
+            leds[0] = (0, 80, 0)
+            leds[1] = (0, 80, 0)
+            leds[2] = (0, 80, 0)
+            leds[3] = (0, 80, 0)
+            leds[4] = (0, 80, 0)
+            leds[5] = (0, 80, 0)
+            leds[6] = (0, 80, 0)
+            leds[7] = (0, 80, 0)
+            leds[8] = (0, 80, 0)
+            leds[9] = (0, 80, 0)
+            leds[10] = (0, 80, 0)
+            leds[11] = (0, 80, 0)
+            leds[12] = (0, 80, 0)
+            leds[13] = (0, 80, 0)
+            leds[14] = (0, 80, 0)
+            leds[15] = (0, 80, 0)
+            leds[32] = (0, 80, 0)
+            leds[33] = (0, 80, 0)
+            leds[34] = (0, 80, 0)
+            leds[35] = (0, 80, 0)
+            leds[36] = (0, 80, 0)
+            leds[37] = (0, 80, 0)
+            leds[38] = (0, 80, 0)
+            leds[39] = (0, 80, 0)
+            leds[40] = (0, 80, 0)
+            leds[41] = (0, 80, 0)
+            leds[42] = (0, 80, 0)
+            leds[43] = (0, 80, 0)
+            leds[44] = (0, 80, 0)
+            leds[46] = (0, 80, 0)
+            leds[47] = (0, 80, 0)
+            leds[64] = (0, 80, 0)
+            leds[65] = (0, 80, 0)
+            leds[66] = (0, 80, 0)
+            leds[68] = (0, 80, 0)
+            leds[69] = (0, 80, 0)
+            leds[70] = (0, 80, 0)
+            leds[71] = (0, 80, 0)
+            leds[72] = (0, 80, 0)
+            leds[73] = (0, 80, 0)
+            leds[74] = (0, 80, 0)
+            leds[75] = (0, 80, 0)
+            leds[76] = (0, 80, 0)
+            leds[77] = (0, 80, 0)
+            leds[78] = (0, 80, 0)
+            leds[79] = (0, 80, 0)
+            leds[80] = (0, 80, 0)
+            leds[96] = (0, 80, 0)
+            leds[97] = (0, 80, 0)
+            leds[98] = (0, 80, 0)
+            leds[99] = (0, 80, 0)
+            leds[100] = (0, 80, 0)
+            leds[101] = (0, 80, 0)
+            leds[102] = (0, 80, 0)
+            leds[103] = (0, 80, 0)
+            leds[104] = (0, 80, 0)
+            leds[105] = (0, 80, 0)
+            leds[106] = (0, 80, 0)
+            leds[107] = (0, 80, 0)
+            leds[108] = (0, 80, 0)
+            leds[109] = (0, 80, 0)
+            leds[111] = (0, 80, 0)
+            leds[112] = (0, 80, 0)
+            leds[114] = (0, 80, 0)
+            leds[115] = (0, 80, 0)
+            leds[126] = (0, 80, 0)
+            leds[127] = (0, 80, 0)
+            leds[128] = (0, 80, 0)
+            leds[129] = (0, 80, 0)
+            leds[131] = (0, 80, 0)
+            leds[132] = (0, 80, 0)
+            leds[133] = (0, 80, 0)
+            leds[134] = (0, 80, 0)
+            leds[135] = (0, 80, 0)
+            leds[136] = (0, 80, 0)
+            leds[137] = (0, 80, 0)
+            leds[138] = (0, 80, 0)
+            leds[140] = (0, 80, 0)
+            leds[141] = (0, 80, 0)
+            leds[143] = (0, 80, 0)
+            leds[144] = (0, 80, 0)
+            leds[149] = (0, 80, 0)
+            leds[158] = (0, 80, 0)
+            leds[159] = (0, 80, 0)
+            leds[160] = (0, 80, 0)
+            leds[161] = (0, 80, 0)
+            leds[162] = (0, 80, 0)
+            leds[163] = (0, 80, 0)
+            leds[164] = (0, 80, 0)
+            leds[165] = (0, 80, 0)
+            leds[166] = (0, 80, 0)
+            leds[167] = (0, 80, 0)
+            leds[168] = (0, 80, 0)
+            leds[170] = (0, 80, 0)
+            leds[171] = (0, 80, 0)
+            leds[172] = (0, 80, 0)
+            leds[173] = (0, 80, 0)
+            leds[174] = (0, 80, 0)
+            leds[175] = (0, 80, 0)
+            leds[176] = (0, 80, 0)
+            leds[183] = (0, 80, 0)
+            leds[188] = (0, 80, 0)
+            leds[189] = (0, 80, 0)
+            leds[190] = (0, 80, 0)
+            leds[191] = (0, 80, 0)
+            leds[192] = (0, 80, 0)
+            leds[193] = (0, 80, 0)
+            leds[194] = (0, 80, 0)
+            leds[195] = (0, 80, 0)
+            leds[197] = (0, 80, 0)
+            leds[198] = (0, 80, 0)
+            leds[200] = (0, 80, 0)
+            leds[201] = (0, 80, 0)
+            leds[202] = (0, 80, 0)
+            leds[203] = (0, 80, 0)
+            leds[204] = (0, 80, 0)
+            leds[205] = (0, 80, 0)
+            leds[207] = (0, 80, 0)
+            leds[208] = (0, 80, 0)
+            leds[217] = (0, 80, 0)
+            leds[218] = (0, 80, 0)
+            leds[224] = (0, 80, 0)
+            leds[225] = (0, 80, 0)
+            leds[226] = (0, 80, 0)
+            leds[227] = (0, 80, 0)
+            leds[228] = (0, 80, 0)
+            leds[229] = (0, 80, 0)
+            leds[230] = (0, 80, 0)
+            leds[231] = (0, 80, 0)
+            leds[232] = (0, 80, 0)
+            leds[233] = (0, 80, 0)
+            leds[234] = (0, 80, 0)
+            leds[235] = (0, 80, 0)
+            leds[236] = (0, 80, 0)
+            leds[237] = (0, 80, 0)
+            leds[238] = (0, 80, 0)
+            leds[239] = (0, 80, 0)
+            
+            leds[initial_position] = (0, 0, 100)
+            
+            if not client.put_pixels(leds, channel=0):
+                print ('not connected')
+
+            #Moving led 
+            while end_game == 0:
+                (x,y) = self.joystick.get_direction()
+                
+                if x == 1 & y == 0: 
+                    # go left
+                    location = old_location + 1
+
+                    if leds[location] == (0, 0, 0):
+                       leds[old_location] = (0, 0, 0)
+                       leds[location] = (0, 0, 100)
+                       if not client.put_pixels(leds, channel=0):
+                            print ('not connected')
+                       location = old_location
+                
+                elif x == 2 & y == 0:
+                    # go right
+                    location = old_location - 1
                     
-                #    time.sleep(0.1)
+                    if leds[location] == (0, 0, 0):
+                       leds[old_location] = (0, 0, 0)
+                       leds[location] = (0, 0, 100)
+                       if not client.put_pixels(leds, channel=0):
+                            print ('not connected')
+                       location = old_location
+                 
+                #elif y == 1:
+                    # go up
+                    
+                    
+               # elif y == 2:
+                    # go down
+                   # if location == 18:
+                    #    location = 45
+                   # elif location == 60:
+                   #     location = 67
+                   # elif location == 67:
+                     #   location = 91
+                   # elif location == 80:
+                    #    location = 
+                    #else:
+                    #    location = location
+                    
+                    #if leds[location] == (0, 0, 0):
+                    #   led[old_location] = (0, 0, 0)
+                    #   leds[location] = (0, 0, 100)
+                    #   location = old_location
+                    
+                #else:
+                    #location = old_location
+                    
                 
-                
+                if location == 32:
+                    end_game = 1
+                #el
+                    #end_game = 0
+ 
                 #led_path = (100, 100, 100)
                 #i = 100
                 #for i in range (0, 255):
@@ -173,7 +368,7 @@ class LedDisplay():
     
     #def yay():
        #"""Displays yay on the LED matrix."""
-       #self.client.put_pixels(self, pixels, channel=0)  
+       # self.client.put_pixels(self, pixels, channel=0)  
        # Display yay  
         
     # End def
