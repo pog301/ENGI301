@@ -1,5 +1,7 @@
 # Mini Rube Goldberg + Game 
 
+Project 1: Building a simplified system based on Rube Goldberg machines. 
+
 Software Build Instructions:
 
 Software Operation Instructions
