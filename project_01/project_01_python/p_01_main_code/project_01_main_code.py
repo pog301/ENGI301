@@ -1,9 +1,9 @@
 """
 --------------------------------------------------------------------------
-Project 01 
+Project 01 - 
 --------------------------------------------------------------------------
 License:   
-Copyright 2023 - Paula Ortega Gimenez
+Copyright 2023 - Paula Ortega
 
 Redistribution and use in source and binary forms, with or without 
 modification, are permitted provided that the following conditions are met:
@@ -33,42 +33,42 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Use the following hardware components to make this project:  
   - Button x1
-  - Servo motor (normal) x2
-  - Continuous rotation servo x1
+  - Servo motor x1
   - LED 16x16 matrix x1
     - Level Shifter x1 
   - Joystick x1
-  - Motion sensor x1 
 Use the following other physical components to make this project:
-  - Marble
-  - Marble path
-  - Base/breadboards to arrange the project and hold the componentx in place 
+  - See Hackster.io linked within the project's repository README (but key 
+  components used include marble and marble path)
 
 Requirements:
   - Hardware:
     - Summary: 
-        - When off (no initial motion detected in motion sensor): normal servos 
-        are closed; continous servo is still; LED screen is off. 
-        - When on (initial motion detected in motion sensor): program runs 
+        - While button is not pressed: servo off 
+        - When button pressed: program runs 
     - Button:
-    - Servo 1:
-    - Servo 2: 
-    - Continuous Servo: 
+        - Starts running of program
+    - Servo:
+        - Opens when button pressed and closes afterwards
     - LED matrix:
+        - Displays game and allows user to interact with it
     - Joystick:
-    - Motion Sensor: 
+        - Allows motion within game
+
     - User interaction:
-      - Needs to be able to start the project by an initial motion in front of
-      the motion sensor
-      - Needs to be able to play the game in the LED matrix after the screen is
-      turned on
+      - Needs to be able to start the project by pressing the button
+      - Needs to be able to play the game in the LED matrix after the 
+      limit_switch is pressed
 
 Uses:
-  - Libraries developed in class (button, servo, ) and was developed using
-  a project developed in class as guidance. ***COMBO_LOCK 
-  - Libraries developed for this project (led_matrix_display, )
-  
-  USED SERVO CLASS CODE TO WRITE THE SERVO RELATED CODE 
+  - Libraries developed in class (button, servo) (python folder in 
+GitHub repository) 
+  - Libraries developed for this project (led_matrix_display, limit_switch) 
+  (p_01_other folder within project_01_python)
+  - The code was developed using a project developed in class as guidance 
+  specifically (combo_lock.py). The servo.py code developed in class was also used
+  to write the servo related code here. Other files developed in class might 
+  have also helped, if not directly, then in understanding. 
 
 """
 
@@ -86,10 +86,6 @@ import limit_switch         as SWITCH
 
 SERVO_OFF         = 100     # Fully anti-clockwise
 SERVO_ON          = 0       # Fully clockwise
-
-# ------------------------------------------------------------------------
-# Global variables
-# ------------------------------------------------------------------------
 
 
 # ------------------------------------------------------------------------
@@ -122,15 +118,7 @@ class Rube():
         self.led_matrix.clear()
 
     # End def
-    
-    #def servo_1_on(self)
-        #"""Get Servo 1 to work."""
-        
-        # call servo code
-        # servo 1 turns, wait X seconds, turns back 
-    
-    # End def
-    
+
     def run(self):
         """Execute the main program."""
         
@@ -146,15 +134,6 @@ class Rube():
             break
     # End def
     
-    
-    #def cleanup(self):
-        #"""Cleanup the hardware components."""
-
-        # Set Display to something fun to show program is complete
-
-        # Clean up hardware
-        
-    # End def
 
 # End class
 
@@ -175,8 +154,6 @@ if __name__ == '__main__':
         project_01.run()
 
     except KeyboardInterrupt:
-        # Clean up hardware when exiting
-        #project_01.cleanup()
         print("The game is done. I hope you enjoyed!")
 
 

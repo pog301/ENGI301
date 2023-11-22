@@ -1,9 +1,9 @@
 #!/bin/bash
 # --------------------------------------------------------------------------
-# Combination Lock - Configure Pins
+# Project 1 - Configure Pins
 # --------------------------------------------------------------------------
 # License:   
-# Copyright 2020 Erik Welsh
+# Copyright 2023 - Paula Ortega
 # 
 # Redistribution and use in source and binary forms, with or without 
 # modification, are permitted provided that the following conditions are met:
@@ -31,18 +31,21 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # --------------------------------------------------------------------------
 # 
-# Configure pins for Combination Lock:
-#   - I2C1
+# Configure pins for Project 1:
 #   - Button
-#   - LEDs (Red / Green)
 #   - Servo
+#   - LED display
+#   - Limit Switch
+#
+# Used config_pins.sh file for the combo_lock project from class to write this 
+# file
 # 
 # --------------------------------------------------------------------------
 
 # Button
 config-pin P2_02 gpio
 
-# Servo 1
+# Servo 
 config-pin P1_33 pwm
 
 # LED display 

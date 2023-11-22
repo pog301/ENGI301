@@ -1,9 +1,9 @@
 """
 --------------------------------------------------------------------------
-Button Driver
+Limit Switch Driver
 --------------------------------------------------------------------------
 License:   
-Copyright 2021-2023 - Paula Ortega Gimenez
+Copyright 2023 - Paula Ortega
 
 Redistribution and use in source and binary forms, with or without 
 modification, are permitted provided that the following conditions are met:
@@ -31,33 +31,33 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------
 
-Button Driver
+Limit Switch Driver
 
-  This driver is built for buttons that have a pull up resistor between the
-button and the processor pin (i.e. the input is "High"/"1" when the button is
-not pressed) and will be connected to ground when the button is pressed (i.e. 
-the input is "Low" / "0" when the button is pressed)
+  This driver is built for limit switches connected such that the pin to the left 
+  (with the pressing flat pointing to that side) is connected to ground, the pin 
+  in the middle is connected to to a pull up resistor going to 3.3V, and the pin 
+  to teh right is connected to the PocketBeagle (output pin)
 
 Software API:
 
-  Button(pin)
-    - Provide pin that the button monitors
+  LimitSwitch(pin)
+    - Provide pin that the limit switch monitors
     
     is_pressed()
-      - Return a boolean value (i.e. True/False) on if button is pressed
+      - Return a boolean value (i.e. True/False) on if limit switch is pressed
       - Function consumes no time
     
     wait_for_press(function=None)
-      - Wait for the button to be pressed 
+      - Wait for the limit switch to be pressed 
       - Optionally takes in an argument "function" which is the function 
-        to be executed when waiting for the button to be pressed
+        to be executed when waiting for the limit switch to be pressed
       - Function consumes time
       - Returns a tuple:  
-        (<time button was pressed>, <data returned by the "function" argument>)
+        (<time limit switch was pressed>, <data returned by the "function" argument>)
         
         
-        
-        MADE from BUTTON CODE FROM CLASS 
+- This file was made using the button.py file code from class (python folder in 
+GitHub repository).        
 
 """
 import time
@@ -110,9 +110,6 @@ class LimitSwitch():
     
     def _setup(self):
         """ Setup the hardware components. """
-        # Initialize Button
-        # HW#4 TODO: (one line of code)
-        #   Remove "pass" and use the Adafruit_BBIO.GPIO library to set up the button
         GPIO.setup(self.pin, GPIO.IN)
 
     # End def
@@ -124,11 +121,6 @@ class LimitSwitch():
            Returns:  True  - Limit switch is pressed
                      False - Limit switch is not pressed
         """
-        #difference = GPIO.input(self.pin) 
-        #if difference > 1:
-           # return True
-        # elif difference <= 1:
-         #   return False
         return GPIO.input(self.pin) == self.pressed_value
 
     # End def
@@ -152,20 +144,15 @@ class LimitSwitch():
         limit_switch_press_time     = None
         
         # Execute function if it is not None
-        #   - This covers the case that the button is pressed prior 
+        #   - This covers the case that the limit switch is pressed prior 
         #     to entering this function
         if function is not None:
             function_return_value = function()
         
-        # Wait for button press
+        # Wait for limit switch press
         #   If the function is not None, execute the function
         #   Sleep for a short amount of time to reduce the CPU load
-        #
-        # HW#4 TODO: (one line of code)
-        #   Update while loop condition to compare the input value of the  
-        #   GPIO pin of the buton (i.e. self.pin) to the "unpressed value" 
-        #   of the class (i.e. we are executing the while loop while the 
-        #   button is not being pressed)
+
         while(GPIO.input(self.pin) == self.unpressed_value):
         
             if function is not None:
@@ -176,21 +163,17 @@ class LimitSwitch():
         # Record time
         limit_switch_press_time = time.time()
         
-        # Wait for button release
+        # Wait for limit switch release
         #   Sleep for a short amount of time to reduce the CPU load
         #
-        # HW#4 TODO: (one line of code)
-        #   Update while loop condition to compare the input value of the  
-        #   GPIO pin of the buton (i.e. self.pin) to the "pressed value" 
-        #   of the class (i.e. we are executing the while loop while the 
-        #   button is being pressed)
+
         while(GPIO.input(self.pin) == self.pressed_value):
             time.sleep(self.sleep_time)
         
-        # Compute the button_press_time
+        # Compute the limit_switch_press_time
         limit_switch_press_time = time.time() - limit_switch_press_time
 
-        # Return a tuple:  (button press time, function return value)        
+        # Return a tuple:  (limit switch press time, function return value)        
         return (limit_switch_press_time, function_return_value)
         
     # End def
@@ -207,7 +190,7 @@ if __name__ == '__main__':
 
     print("Limit Switch Test")
 
-    # Create instantiation of the button
+    # Create instantiation of the limit switch
     limit_switch = LimitSwitch("P2_6")
     
     # Create an function to test the wait_for_press function

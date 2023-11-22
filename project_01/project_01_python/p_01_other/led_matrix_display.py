@@ -3,10 +3,7 @@
 LED Matrix Display
 --------------------------------------------------------------------------
 License:   
-Copyright 2021 Erik Welsh
-
-Based on Code from:  https://github.com/rpliu3/ENGI301/tree/master/Project_01/code
-Copyright 2019 Rebecca Liu
+Copyright 2023 - Paula Ortega
 
 Redistribution and use in source and binary forms, with or without 
 modification, are permitted provided that the following conditions are met:
@@ -39,23 +36,24 @@ Software API:
   
 --------------------------------------------------------------------------
 Background Information: 
- 
-   * Base code for LED functions came from the following repositories:
-        https://markayoder.github.io/PRUCookbook/01case/case.html#_neopixels_5050_rgb_leds_with_integrated_drivers_ledscape
-        https://markayoder.github.io/PRUCookbook/06io/io.html#io_uio
-        https://github.com/Yona-Appletree/LEDscape.git
-        https://github.com/zestyping/openpixelcontrol
-        
-        
-        
-        CODE MADE BY MODIFICATION OF LED_STRIP_TEST *** (USES OPC)
+
+This code was developed through the modification of the led_strip_test code 
+given in class and it uses the same opc related codes to work. Additionally, any 
+references to what was used to develop the led_strip_test and the other related 
+code files can be found within those respective files. 
+Also used combo_lock code from class as a reference for debugging, based some 
+general code formatting (comments within code) on this, and also used code for 
+making this. 
+
+The following codes helped for understanding of how things should work: . 
+Specifically I applied some parts from my understanding from and it reinforced 
+some concepts.
+
         ALSO made from understanding of Snake codes x2 ? 
-        USED Combolock as reference for debugging and added a couple of comments eg (commented main code) from there too 
-        (perhaps not specifically or first time it appeard)
+
 
 Went over Connect 4 code and it helped me understand; applied the old and new positions and reinforced idea of diving by
 sections (if <x etc.) https://github.com/craannj/ECE434-connect4/blob/master/connect4final.py
-Used combolock code for making 
 
 """
 

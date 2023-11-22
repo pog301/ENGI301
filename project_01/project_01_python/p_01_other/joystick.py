@@ -3,7 +3,7 @@
 Project 01 
 --------------------------------------------------------------------------
 License:   
-Copyright 2023 - Paula Ortega Gimenez
+Copyright 2023 - Paula Ortega
 
 Based on Code from: https://github.com/lucasesnaola/ENGI301/blob/main/python/RCboat/remote/joystick/joystick.py 
 Copyright 2020 Lucas Esnaola
@@ -34,16 +34,19 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------
 
+Note: also used some help from the comb_lock.py project file developed in class to
+write this code (python folder in GitHub repository).
+
 - 
 
 This program reads the raw analog voltage value of the joysticks Vrx and Vry
-and then determines the state of .
+and then determines the direction that the LED red should move in within the
+LED matrix fro project 1.
 
 Analog Voltage Information
 -Vrx range(AIN1): 0 to 3550, centerpoint around 1000
 -Vry range(AIN2): 0 to 3550, centerpoint around 1000
 
-ALOS USED SOME HELP FROM COMBOLOCK 
 
 """
 

@@ -1,9 +1,9 @@
 #!/bin/bash
 # --------------------------------------------------------------------------
-# Combination Lock - Run Script
+# Project 1 - Run Script
 # --------------------------------------------------------------------------
 # License:   
-# Copyright 2020 Erik Welsh
+# Copyright 2023 - Paula Ortega
 # 
 # Redistribution and use in source and binary forms, with or without 
 # modification, are permitted provided that the following conditions are met:
@@ -31,23 +31,24 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # --------------------------------------------------------------------------
 # 
-# Run Combination Lock in /var/lib/cloud9/ENGI301/python/combo_lock
+# Run Project 1 in /var/lib/cloud9/ENGI301/project_01/project_01_python/p_01_main_code
+#
+# Used run file for the combo_lock project from class to write this file
 # 
 # --------------------------------------------------------------------------
 cd /var/lib/cloud9/ENGI301/python/led_strip
 
 #./run-opc-server&
 
-cd /var/lib/cloud9/ENGI301/python/project_01/project_01_python/p_01_main_code
+cd /var/lib/cloud9/ENGI301/project_01/project_01_python/p_01_main_code
 
 ./configure_pins_p01.sh
-
-cd /var/lib/cloud9/ENGI301/python/project_01/project_01_python/p_01_other
 
 dirs=(
     '/var/lib/cloud9/ENGI301/python/button:'
     '/var/lib/cloud9/ENGI301/python/servo:'
-    '/var/lib/cloud9/ENGI301/python/project_01_python'
+    '/var/lib/cloud9/ENGI301/python/led_strip:'
+    '/var/lib/cloud9/ENGI301/project_01/project_01_python/p_01_other'
 )
 
 
