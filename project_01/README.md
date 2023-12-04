@@ -1,4 +1,4 @@
-# Mini Rube Goldberg + Game 
+# Mini Rube Goldberg with Game 
 
 Project 1: Building a simplified system based on Rube Goldberg machines. Here is the link to the Hackster.io page for the project: .
 
