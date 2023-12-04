@@ -38,7 +38,7 @@
 # --------------------------------------------------------------------------
 cd /var/lib/cloud9/ENGI301/python/led_strip
 
-#./run-opc-server&
+./run-opc-server&
 
 cd /var/lib/cloud9/ENGI301/project_01/project_01_python/p_01_main_code
 

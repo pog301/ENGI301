@@ -45,15 +45,16 @@ Also used combo_lock code from class as a reference for debugging, based some
 general code formatting (comments within code) on this, and also used code for 
 making this. 
 
-The following codes helped for understanding of how things should work: . 
-Specifically I applied some parts from my understanding from and it reinforced 
-some concepts.
 
-        ALSO made from understanding of Snake codes x2 ? 
+The following codes helped for my understanding of how things work and helped me 
+develop my code:
+- https://www.hackster.io/vasiljevalentin/snake-led-16x16-matrix-game-27ba6d
+- https://www.hackster.io/arnaum/leds-and-buzzer-controlled-by-joystick-336696
+- https://www.hackster.io/legoev3projects/arduino-snake-game-with-32x16-led-panel-c70f26 
 
-
-Went over Connect 4 code and it helped me understand; applied the old and new positions and reinforced idea of diving by
-sections (if <x etc.) https://github.com/craannj/ECE434-connect4/blob/master/connect4final.py
+Also, went over a Connect 4 game code and it helped me understand; applied the 
+old and new positions and reinforced idea of diving by sections (if <x etc.) 
+https://github.com/craannj/ECE434-connect4/blob/master/connect4final.py
 
 """
 
