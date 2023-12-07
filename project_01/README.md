@@ -26,6 +26,6 @@ Software Build and Operation Instructions:
 2) To run the program, use "sudo ./run_p01".
    Note that this will start a process in the background. In the case that you want to exit the game, then you will have to kill any process related to "opc".
 3) In the case that you want to autoboot this project, you can use the following line within the crontab:
-   
+   @reboot sleep 30 && bash /var/lib/cloud9/ENGI301/project_01/project_01_python/p_01_main_code/run_p01 > /var/lib/cloud9/logs/cronlog 2>&1 
       
 Disclaimer: This is student work developed as part of a course. As such, some components might be missing or do not work as desired, and the quality is that of someone learning this for the first time. Additionally, a lot of the code was developed as part of the course or facilitated by the work done in the course. Thus, I take no responsibility for the use of any part of the project. Also, my professor helped me throughout the whole process, from giving ideas to helping me make things work, so I might not know the answers to some of the questions.
