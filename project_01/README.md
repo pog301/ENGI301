@@ -1,6 +1,6 @@
 # Mini Rube Goldberg with Game 
 
-Project 1: Building a simplified system based on Rube Goldberg machines. Here is the link to the Hackster.io page for the project: .
+Project 1: Building a simplified system based on Rube Goldberg machines. Here is the link to the Hackster.io page for the project: https://www.hackster.io/pog301/mini-rube-goldberg-with-game-1267cd.
 
 This folder has two subfolders:
 
@@ -16,7 +16,8 @@ This folder has two subfolders:
               This contains a file with the main code for the project as well as a file to configure the pins and another one to run it.
               2.2.2) p_01_other
               This contains some additional files developed for the project which are called within the main project file.        
-      Any other file implemented for the project but not found within "project_01_python" can be found within the python file in the main GitHub       repository. 
+      The other files implemented for the project but not found within "project_01_python" (button.py and servo.py) can be found within their respective subfolders in the python folder in        my main GitHub repository. Note: This repository is a work in progress and many of the files within the python repository are unfinished or not well done; only use the files needed 
+      for this project as mentioned above. 
 
 
 Software Build and Operation Instructions:
@@ -29,4 +30,4 @@ Software Build and Operation Instructions:
    @reboot sleep 30 && bash /var/lib/cloud9/ENGI301/project_01/project_01_python/p_01_main_code/run_p01 > /var/lib/cloud9/logs/cronlog 2>&1 
       
 Disclaimer: This is student work developed as part of a course. As such, some components might be missing or do not work as desired, and the quality is that of someone learning this for the first time. Additionally, a lot of the code was developed as part of the course or facilitated by the work done in the course. Thus, I take no responsibility for the use of any part of the project. Also, my professor helped me throughout the whole process, from giving ideas to helping me make things work, so I might not know the answers to some of the questions.
-Note: This repository is a work in progress and many of the files within the python repository are unfinished or not well done; only use the files needed for this project as mentioned above. 
+
