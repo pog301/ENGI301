@@ -29,3 +29,4 @@ Software Build and Operation Instructions:
    @reboot sleep 30 && bash /var/lib/cloud9/ENGI301/project_01/project_01_python/p_01_main_code/run_p01 > /var/lib/cloud9/logs/cronlog 2>&1 
       
 Disclaimer: This is student work developed as part of a course. As such, some components might be missing or do not work as desired, and the quality is that of someone learning this for the first time. Additionally, a lot of the code was developed as part of the course or facilitated by the work done in the course. Thus, I take no responsibility for the use of any part of the project. Also, my professor helped me throughout the whole process, from giving ideas to helping me make things work, so I might not know the answers to some of the questions.
+Note: This repository is a work in progress and many of the files within the python repository are unfinished or not well done; only use the files needed for this project as mentioned above. 
