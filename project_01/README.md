@@ -19,17 +19,13 @@ This folder has two subfolders:
       Any other file implemented for the project but not found within "project_01_python" can be found within the python file in the main GitHub       repository. 
 
 
-Software Build Instructions:
+Software Build and Operation Instructions:
 
-1) Start with "p_01_main_code" to make a main code file for the whole project and save it in a folder named "p_01_main_code"
-2) Use the other files referred within the p_01_main_code file to make the whole system work; save the files in "p_01_other" to a folder with that name as well as any other files within the python folder needed to their respective folders.
-3) Make sure to have the "configure_pins_p01.sh" as well as the "run_p01" files within the "p_01_main_code". 
-Note: if you decide to change any naming convention or location of files in general, you will have to make sure that it is updated where appropriate. Also make sure that the "run_p01" is updated to show the right path. Also, if any other pin in the Pocketbeagle is used instead of the ones I used, make sure to update the "configure_pins_p01.sh" file as well. 
-4) 
-
-
-Software Operation Instructions
-1) Autoboot 
-
-
+1) Copy the project_01_python subfolder files within the project_01 folder into your repository. Also copy the button.py (button subfolder) as well as the servo.py (servo subfolder) files within the python folder.
+   Note: if you decide to change any naming convention or location of any files in general, you will have to make sure that it is updated where appropriate. Also make sure that the "run_p01" is updated to show the right path. Additionally, if any other pin in the Pocketbeagle is used instead of the ones I used, make sure to update the "configure_pins_p01.sh" file as well. 
+2) To run the program, use "sudo ./run_p01".
+   Note that this will start a process in the background. In the case that you want to exit the game, then you will have to kill any process related to "opc".
+3) In the case that you want to autoboot this project, you can use the following line within the crontab:
+   
+      
 Disclaimer: This is student work developed as part of a course. As such, some components might be missing or do not work as desired, and the quality is that of someone learning this for the first time. Additionally, a lot of the code was developed as part of the course or facilitated by the work done in the course. Thus, I take no responsibility for the use of any part of the project. Also, my professor helped me throughout the whole process, from giving ideas to helping me make things work, so I might not know the answers to some of the questions.
